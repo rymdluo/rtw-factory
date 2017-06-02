@@ -1,0 +1,30 @@
+name: rtw-factory
+version: 0.5.0
+description: Generates an html copy of your website
+icon: circle
+author:
+  name: Raymond Luo
+homepage: https://github.com/rymdluo/rtw-factory
+keywords: grav, plugin, static, site, generator
+bugs: https://github.com/rymdluo/rtw-factory/issues
+docs: https://github.com/rymdluo/rtw-factory/blob/master/README.md
+license: MIT
+
+form:
+  validation: strict
+  fields:
+    enabled:
+      type: toggle
+      label: Plugin status
+      highlight: 1
+      default: 0
+      options:
+        1: Enabled
+        0: Disabled
+      validate:
+        type: bool
+
+    destination:
+      type: text
+      label: Destination
+      help: Set the output directory.
