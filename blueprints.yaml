@@ -1,13 +1,13 @@
-name: rtw-factory
-version: 0.5.0
+name: rtw-hstlr
+version: 0.1.0
 description: Generates an html copy of your website
 icon: circle
 author:
   name: Raymond Luo
-homepage: https://github.com/rymdluo/rtw-factory
+homepage: https://github.com/rymdluo/rtw-hstlr
 keywords: grav, plugin, static, site, generator
-bugs: https://github.com/rymdluo/rtw-factory/issues
-docs: https://github.com/rymdluo/rtw-factory/blob/master/README.md
+bugs: https://github.com/rymdluo/rtw-hstlr/issues
+docs: https://github.com/rymdluo/rtw-hstlr/blob/master/README.md
 license: MIT
 
 form:

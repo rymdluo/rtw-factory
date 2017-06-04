@@ -11,6 +11,8 @@ class GenerateCommand extends ConsoleCommand
   protected function configure()
   {
     $this
+    ->setName("g")
+    ->setName("gen")
     ->setName("generate")
     ->setDescription("Generates static site")
     ->addArgument(
@@ -27,7 +29,7 @@ class GenerateCommand extends ConsoleCommand
       require(__DIR__.'/../classes/RollingCurl.php');
       require(__DIR__.'/../classes/Request.php');
 
-      define(GRAV_HTTP, 'https://rtw.site.com', GRAV_ROOT);
+      define(GRAV_HTTP, 'https://preview.teashade.com', GRAV_ROOT);
       
       echo "grabbing from " . GRAV_HTTP . "\n"; 
       
@@ -59,7 +61,7 @@ class GenerateCommand extends ConsoleCommand
                 $response = str_replace('<meta id="rtw" name="robots" content="noindex, nofollow">', '', $response);
                 $response = str_replace('rtw.', '', $response);
                 
-                $event_horizon = '/srv/users/serverpilot/apps/site/public';
+                $event_horizon = '/srv/users/serverpilot/apps/teashade-preview/rtw-hstlr';
                 $page_dir = explode(".com", $request->getUrl());
                 
                 if ($page_dir[1]){
@@ -95,14 +97,14 @@ class GenerateCommand extends ConsoleCommand
       curl_setopt($pull, CURLOPT_FOLLOWLOCATION, 1);
       $emit = curl_exec($pull);
       curl_close($pull);
-      $emit = str_replace('<meta id="blackhole" name="robots" content="noindex, nofollow">', '', $emit);
+      $emit = str_replace('<meta id="rtw" name="robots" content="noindex, nofollow">', '', $emit);
       $emit = str_replace('rtw.', '', $emit);
       return $emit;
     }
       
     // set build dir
     
-    $event_horizon = '/srv/users/serverpilot/apps/site/public';
+    $event_horizon = '/srv/users/serverpilot/apps/teashade-preview/rtw-hstlr';
     
     echo "deploying to " . $event_horizon . "\n";
       
